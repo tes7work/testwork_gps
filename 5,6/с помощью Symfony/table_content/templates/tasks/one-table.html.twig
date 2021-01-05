@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index Page{% endblock %}
+
+{% block body %}
+
+    <div class="table-task-wrap">
+        <div class="mt10 col-xs-6 col-md-11 col-lg-11">
+            {% if pagination.getItems()|length > 0 %}
+                <table class="table">
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>body</th>
+                    <th>user_id</th>
+                </tr>
+                {% for task in pagination.getItems() %}
+                    <tr>
+                        <td>{{ task.id }}</td>
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.body }}</td>
+                        <td>{{ task.getUser().getId() }}</td>
+                    </tr>
+                {% endfor %}
+                </table>
+            {% else %}
+                Результаты не найдены.
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="pagination-block">
+        <div>
+            -------------------------------------------------------------------------
+        </div>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+
+{% endblock %}

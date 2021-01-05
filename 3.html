@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Пункт 3</title>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+</head>
+<body>
+
+<style>
+
+    #random_block{
+        width: 300px;
+        height: 100px;
+        position: absolute;
+        border: 1px solid;
+    }
+
+</style>
+
+
+<textarea id="random_block"></textarea>
+
+
+<script>
+
+    var elemLeft, elemTop, maxElemLeft, maxElemTop, elem;
+
+    elem = document.getElementById('random_block');
+
+    maxElemLeft = document.documentElement.clientWidth - elem.offsetWidth;
+    maxElemTop = document.documentElement.clientHeight - elem.offsetHeight;
+
+    elem.onmousemove = handler;
+
+    function handler() {
+        elemLeft = Math.random() * maxElemLeft;
+        elem.style.left = elemLeft + 'px';
+        elemTop = Math.random() * maxElemTop;
+        elem.style.top = elemTop + 'px';
+    }
+
+</script>
+
+</body>
+</html>

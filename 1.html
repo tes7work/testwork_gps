@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Пункт 1</title>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+</head>
+<body>
+
+
+
+
+<script>
+
+    $(document).ready(function(){
+        var array_to_flip = {a: 1, b: 1, c: 2};
+        console.log( array_flip_1(array_to_flip) );
+        console.log( array_flip_2(array_to_flip) );
+        console.log( array_flip_3(array_to_flip) );
+
+        array_to_flip = ['a', 'b', 'c'];
+        console.log( array_flip_1(array_to_flip) );
+        console.log( array_flip_2(array_to_flip) );
+        console.log( array_flip_3(array_to_flip) );
+    });
+
+    //вариант 1
+    function array_flip_1(o){
+        var newObj = {};
+
+        if (Array.isArray(o)){
+
+            o.forEach((el,i)=>{
+                newObj[el]=i;
+            });
+
+        } else if (typeof o === 'object'){
+
+            Object.keys(o).forEach((el,i)=>{
+                newObj[o[el]]=el;
+            });
+
+        }
+
+        return newObj;
+    }
+
+    //вариант 2
+    function array_flip_2(trans){
+        var key, tmp_ar = {};
+
+        for ( key in trans )
+        {
+            if ( trans.hasOwnProperty( key ) )
+            {
+                tmp_ar[trans[key]] = key;
+            }
+        }
+
+        return tmp_ar;
+    }
+
+    //вариант 3
+    function array_flip_3(array_to_flip){
+        var array_flipped={};
+        $.each(array_to_flip, function(i, el) {
+            array_flipped[el]=i;
+        });
+        return array_flipped;
+    }
+
+</script>
+
+</body>
+</html>

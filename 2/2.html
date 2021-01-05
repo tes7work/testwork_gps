@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Пункт 8</title>
+
+    <script src="../js/jquery-1.11.3.min.js"></script>
+
+</head>
+<body>
+
+
+<textarea id="id1" rows="10" cols="40"></textarea>
+
+    <script>
+
+        $(document).ready(function() {
+            $('#id1').click(function() {
+                var elem = this;
+                $.get('2.txt', function (data) {
+                    $(elem).val(data);
+                });
+            })
+        })
+
+    </script>
+
+</body>
+</html>

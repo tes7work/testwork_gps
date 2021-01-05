@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color:#2C3E50;
+  color:#fff;
+}
+body p {
+  padding:20px;
+}
+#leftPane {
+  width: 30%;
+}
+#topPane {
+  height: 50%;
+}
+
+
+
+
+.tabber-selectors {
+  padding: 0 1em 1em 1em;
+}
+
+.tabber-contents {
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.tabber-anchor.active {
+  background: #fff;
+  color: #263238;
+}
+
+.tabber-anchor {
+  border: 1px solid #546e7a;
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+#bottomPane {
+  width: 100%;
+}
+
+#textarea_left_block,
+#textarea_top_block{
+  width: 100%;
+}
